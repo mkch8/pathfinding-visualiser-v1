@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+header {
+    width: 100%;
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: aquamarine;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-btn {
+    margin-top: 20px;
+    background-color: coral;
+    font-family: "Rubik", sans-serif;
+    color: white;
+    font-size: 30px;
+    border: none;
+    transition-duration: 0.4s;
+}
+
+#start-btn:hover {
+    transform: scale(1.10);
+    background-color: firebrick;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(50, 20px);
+    grid-gap: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-item {
+    width: 20px;
+    height: 20px;
+    background-color: #e1dddf;
+    border: coral 0px solid;
+}
+
+.obstacle {
+    background-color: #515651;
+}
+
+.queued {
+    background-color: deepskyblue;
+}
+
+.visited {
+    background-color: dodgerblue;
+}
+
+.path {
+    background-color: gold;
+}
+
+.start-point {
+    background-color: mediumspringgreen;
+}
+
+.end-point {
+    background-color: red;
+}

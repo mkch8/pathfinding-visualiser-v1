@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pathfinding Visualizer</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<header>
+    <h1>Pathfinding Visualizer</h1>
+</header>
+<body>
+    <p>First click sets the start point. Second click sets the end point (target). Click and drag to create obstacles or walls</p>
+    <div id="grid-container"></div>
+    <button id="start-btn">start</button>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
