@@ -31,6 +31,21 @@ body {
     background-color: firebrick;
 }
 
+#refresh-btn {
+    margin-top: 20px;
+    background-color: darkcyan;
+    font-family: "Rubik", sans-serif;
+    color: white;
+    font-size: 20px;
+    border: none;
+    transition-duration: 0.4s;
+}
+
+#refresh-btn:hover {
+    transform: scale(1.10);
+    background-color: darkslategray;
+}
+
 #grid-container {
     display: grid;
     grid-template-columns: repeat(50, 20px);
@@ -44,6 +59,11 @@ body {
     height: 20px;
     background-color: #e1dddf;
     border: coral 0px solid;
+}
+
+.grid-item:hover {
+    transform: scale(1.10);
+    background-color: grey;
 }
 
 .obstacle {

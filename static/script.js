@@ -45,22 +45,6 @@ class Cell {
         if (this.col > 0) {
             this.neighbours.push(grid[this.row][this.col - 1])
         }
-        // // left neighbour
-        // if (this.row > 0) {
-        //     this.neighbours.push(grid[this.row - 1][this.col])
-        // }
-        // // right neighbour
-        // if (this.row < ROWS - 1) {
-        //     this.neighbours.push(grid[this.row + 1][this.col])
-        // }
-        // // upper neighbour
-        // if (this.col > 0) {
-        //     this.neighbours.push(grid[this.row][this.col - 1])
-        // }
-        // // lower neighbour
-        // if (this.col < COLS - 1) {
-        //     this.neighbours.push(grid[this.row][this.col + 1])
-        // }
     }
 
     visit() {
@@ -134,7 +118,7 @@ document.addEventListener('mouseup', function() {
 });
 
 // Add event listener for the start button, which starts the search
-const startButton = document.getElementById('start-btn')
+const startButton = document.getElementById('start-btn');
 startButton.addEventListener('click', function() {
     if (startPointBool && endPointBool) {
         searching = true;
@@ -145,6 +129,12 @@ startButton.addEventListener('click', function() {
         alert('Please set both a start point and end point before starting the algorithm')
     }
 });
+
+// Add event listener for the refresh button, to refresh the page/grid
+const refreshButton = document.getElementById('refresh-btn');
+refreshButton.addEventListener('click', function() {
+    window.location.reload();
+})
 
 // Add neighbours for each cell in grid
  for (let i=0; i < ROWS; i++) {
@@ -180,7 +170,7 @@ async function startSearch() {
                     for (let i=0; i < path.length; i++) {
                         path[i].element.classList.add('path');
                     }
-                    alert('Target found!');
+                    // alert('Target found!');
                     break;
                 } else {
                     for (let i = 0; i < current_box.neighbours.length; i++) {
