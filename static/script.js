@@ -1,7 +1,8 @@
 const container = document.getElementById('grid-container');
 const ROWS = 20;
 const COLS = 50;
-const global_delay = 3
+const global_delay = 5
+const path_delay = 40
 let startPointBool = false;
 let endPointBool = false;
 let startPoint, endPoint;
@@ -167,10 +168,9 @@ async function startSearch() {
                         path.push(current_box.prior);
                         current_box = current_box.prior;
                     }
-                    for (let i=0; i < path.length; i++) {
-                        path[i].element.classList.add('path');
-                    }
-                    // alert('Target found!');
+                    draw_path(path);
+                    reset();
+                    // reset grid values once the target has been found
                     break;
                 } else {
                     for (let i = 0; i < current_box.neighbours.length; i++) {
@@ -197,4 +197,22 @@ async function startSearch() {
             alert('Please set both a start point and end point before starting the algorithm')
         }
     }
+}
+
+ // draw path with delay
+async function draw_path(pathList) {
+     for (let i=pathList.length-1; i >= 0; i--) {
+         pathList[i].element.classList.add('path');
+         await delay(path_delay)
+     }
+}
+
+// reset grid
+function reset() {
+     for (let i=0; i < grid.length; i++) {
+         grid[i].visited = false;
+         grid[i].queued = false;
+     }
+     queue = []
+     path = []
 }

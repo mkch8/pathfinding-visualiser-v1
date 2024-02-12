@@ -3,17 +3,19 @@
 header {
     width: 100%;
     font-family: "Rubik", sans-serif;
+    color: #e1dddf;
     display: flex;
     justify-content: center;
-    background-color: aquamarine;
 }
 
 body {
     font-family: "Rubik", sans-serif;
+    color: #e1dddf;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #b43f32;
 }
 
 #start-btn {
@@ -33,7 +35,7 @@ body {
 
 #refresh-btn {
     margin-top: 20px;
-    background-color: darkcyan;
+    background-color: darkgoldenrod;
     font-family: "Rubik", sans-serif;
     color: white;
     font-size: 20px;
@@ -43,7 +45,7 @@ body {
 
 #refresh-btn:hover {
     transform: scale(1.10);
-    background-color: darkslategray;
+    background-color: gold;
 }
 
 #grid-container {
@@ -52,13 +54,16 @@ body {
     grid-gap: 1px;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
+    border: white 2px solid;
 }
 
 .grid-item {
     width: 20px;
     height: 20px;
     background-color: #e1dddf;
-    border: coral 0px solid;
+    border-radius: 1px;
+    border: white 0px solid;
 }
 
 .grid-item:hover {
