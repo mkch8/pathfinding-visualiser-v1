@@ -89,17 +89,17 @@ for (let i = 0; i < ROWS; i++) {
         cell.element.addEventListener('mousedown', function(e){
             e.preventDefault();
             isDragging = true;
-            if (startPointBool && endPointBool && !cell.obstacle && !cell.start && !cell.end ) {
-                cell.element.classList.add('obstacle');
-                cell.obstacle = true;
+            if (startPointBool && endPointBool && !cell.start && !cell.end ) {
+                cell.element.classList.toggle('obstacle');
+                cell.obstacle = !cell.obstacle;
             }
         });
 
         // when dragging is True, and the mouse hovers over a cell, toggle the Obstacle
         cell.element.addEventListener('mouseenter', function() {
-            if (isDragging && startPointBool && endPointBool && !cell.obstacle && !cell.start && !cell.end) {
-                cell.element.classList.add('obstacle');
-                cell.obstacle = true;
+            if (isDragging && startPointBool && endPointBool  && !cell.start && !cell.end) {
+                cell.element.classList.toggle('obstacle');
+                cell.obstacle = !cell.obstacle;
             }
         });
 

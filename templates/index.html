@@ -6,12 +6,18 @@
 </head>
 <header>
     <h1>pathfinding visualizer</h1>
+    <div id="header">
+        <button class="tab" onclick="setActiveTab(this)">Dijkstra's</button>
+        <button class="tab" onclick="setActiveTab(this)">A*</button>
+        <button class="tab" onclick="setActiveTab(this)">Breadth-First Search</button>
+        <button class="tab" onclick="setActiveTab(this)">Depth-First Search</button>
+    </div>
 </header>
 <body>
     <p>A pathfinding visualiser using Dijkstra's algorithm to find the shortest path between two nodes.</p>
     <p>First click sets the start point. Second click sets the end point (target). Click and drag to create obstacles.</p>
     <div id="grid-container"></div>
-    <button id="start-btn">start</button>
+    <button id="start-btn">visualise</button>
     <button id="refresh-btn">reset grid</button>
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
